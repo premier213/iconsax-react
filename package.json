@@ -29,7 +29,7 @@
 	"bugs": {
 		"url": "https://github.com/premier213/iconsax-react/issues"
 	},
-	"homepage": "https://github.com/premier213/iconsax-react#readme",
+	"homepage": "https://iconsax-react.vercel.app",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/premier213/iconsax-react.git"
@@ -38,9 +38,7 @@
 	"module": "dist/index.js",
 	"types": "dist/types/index.d.ts",
 	"sideEffects": false,
-	"files": [
-		"dist"
-	],
+	"files": ["dist"],
 	"scripts": {
 		"build": "bun run clean && bun run build:icons && bun run generate:exports && bun run rollup",
 		"build:icons": "bun run clean:icons && svgr --config-file svgr.config.js --ignore-existing --index-template scripts/template.js -- ./src/svgs",
