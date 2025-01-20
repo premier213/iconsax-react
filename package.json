@@ -1,6 +1,6 @@
 {
 	"name": "@meysam213/iconsax-react",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"license": "MIT",
 	"author": "Meysam Saberi <premierp1213@gmail.com>",
 	"description": "The official Vuesax icons for React. A modern and versatile icon library to enhance your React projects with sleek and customizable designs.",
@@ -38,7 +38,9 @@
 	"module": "dist/index.js",
 	"types": "dist/types/index.d.ts",
 	"sideEffects": false,
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"scripts": {
 		"build": "bun run clean && bun run build:icons && bun run generate:exports && bun run rollup",
 		"build:icons": "bun run clean:icons && svgr --config-file svgr.config.js --ignore-existing --index-template scripts/template.js -- ./src/svgs",
