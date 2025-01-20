@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/morphing-dialog";
 import { useCopy } from "@/lib/use-copy";
 import { SaxCopyLinear, SaxCopySuccessLinear } from "@meysam213/iconsax-react";
-import { useEffect, useState } from "react";
+import { SVGProps, useEffect, useState } from "react";
 import { TabsData } from "./tabs-data";
 
 export function GridItem({
@@ -20,9 +20,7 @@ export function GridItem({
 	name: string;
 	iconName: string;
 }) {
-	const [IconComponent, setIconComponent] = useState<
-		((props: { className: string }) => JSX.Element) | null
-	>(null);
+	const [IconComponent, setIconComponent] = useState<((props: SVGProps<SVGSVGElement>) => JSX.Element) | undefined>();
 
 	const [coppied, copy] = useCopy();
 
@@ -30,7 +28,8 @@ export function GridItem({
 		const loadIcon = async () => {
 			try {
 				const iconModule = await import("@meysam213/iconsax-react");
-				const icon = iconModule[iconName];
+				const { default: _, ...icons } = iconModule as Record<string, any>;
+				const icon = icons[iconName] as ((props: SVGProps<SVGSVGElement>) => JSX.Element);
 				if (icon) {
 					setIconComponent(() => icon);
 				} else {

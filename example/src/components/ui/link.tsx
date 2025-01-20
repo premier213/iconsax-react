@@ -1,4 +1,3 @@
-import * as React from "react"
 import { type VariantProps } from "class-variance-authority"
 import {
   Link as AriaLink,
@@ -33,3 +32,4 @@ const Link = ({ className, variant, size, ...props }: LinkProps) => {
 
 export { Link }
 export type { LinkProps }
+
