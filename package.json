@@ -1,0 +1,75 @@
+{
+	"name": "@meysam213/iconsax-react",
+	"version": "1.0.1",
+	"license": "MIT",
+	"author": "Meysam Saberi <premierp1213@gmail.com>",
+	"description": "The official Vuesax icons for React. A modern and versatile icon library to enhance your React projects with sleek and customizable designs.",
+	"keywords": [
+		"react",
+		"vuesax",
+		"icons",
+		"iconsax",
+		"react-icons",
+		"icon",
+		"library",
+		"UI",
+		"design",
+		"SVG",
+		"icons",
+		"customizable",
+		"icons",
+		"modern",
+		"icons",
+		"icon",
+		"components",
+		"react",
+		"UI",
+		"tools"
+	],
+	"bugs": {
+		"url": "https://github.com/premier213/iconsax-react/issues"
+	},
+	"homepage": "https://github.com/premier213/iconsax-react#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/premier213/iconsax-react.git"
+	},
+	"main": "dist/index.js",
+	"module": "dist/index.js",
+	"types": "dist/types/index.d.ts",
+	"sideEffects": false,
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "bun run clean && bun run build:icons && bun run generate:exports && bun run rollup",
+		"build:icons": "bun run clean:icons && svgr --config-file svgr.config.js --ignore-existing --index-template scripts/template.js -- ./src/svgs",
+		"generate:exports": "bun scripts/generate-exports.js",
+		"clean": "bun run clean:dist && bun run clean:icons",
+		"clean:icons": "rm -rf ./src/icons",
+		"clean:dist": "rm -rf dist",
+		"typecheck": "tsc -p tsconfig.json --noEmit",
+		"lint": "biome check . --fix",
+		"rollup": "rollup -c --bundleConfigAsCjs"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
+		"@rollup/plugin-commonjs": "^28.0.2",
+		"@rollup/plugin-node-resolve": "^16.0.0",
+		"@rollup/plugin-typescript": "^12.1.2",
+		"@svgr/core": "^8.1.0",
+		"@types/glob": "^8.1.0",
+		"@types/react": "^19.0.7",
+		"@types/react-dom": "^19.0.3",
+		"glob": "^11.0.1",
+		"react": "18.2.0",
+		"react-dom": "18.2.0",
+		"rollup": "^4.30.1",
+		"rollup-plugin-peer-deps-external": "^2.2.4",
+		"svgr": "^2.0.0",
+		"typescript": "^5.7.3"
+	},
+	"peerDependencies": {
+		"react": ">= 16"
+	}
+}
