@@ -58,12 +58,7 @@ export default App
 
 ## Icons
 
-[Iconsax](https://iconsax.com/)
-
-
-## License
-
-MIT
+[Iconsax](https://iconsax.io/)
 
 ## Source
 
